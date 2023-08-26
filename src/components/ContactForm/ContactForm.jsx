@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { nanoid } from 'nanoid';
 import {
   FormContainer,
@@ -9,8 +10,8 @@ import {
   Input,
   SubmitButton,
 } from './ContactFormStyles';
-import { getContacts } from 'redux/contactsSlice';
-import { addContact } from 'redux/operations';
+import { getContacts } from 'redux/contacts/contactsSlice';
+import { addContact } from 'redux/contacts/contactsOperations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const ContactForm = () => {
     const isContactExists = contacts.some(contact => contact.name === name);
 
     if (isContactExists) {
-      // Notify.warning(`${name} is already in contacts`);
+      toast.warn(`${name} is already in contacts`);
       return;
     }
 

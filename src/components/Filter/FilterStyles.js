@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const FilterContainer = styled.label`
   display: block;
+  margin-top: 20px;
+  margin-left: 20px;
   width: 400px;
   margin-bottom: 10px;
 `;

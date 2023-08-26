@@ -1,34 +1,18 @@
 import { Suspense } from 'react';
-import { Puff } from 'react-loader-spinner';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import AppNav from './AppNav';
+import Fallback from './Fallback/Fallback';
+import { MainStyled } from './MainStyles';
 
 const Layout = () => {
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
-      <main>
-        <Suspense
-          fallback={
-            <Puff
-              height="80"
-              width="80"
-              radius={1}
-              color="#4fa94d"
-              ariaLabel="puff-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
-          }
-        >
+      <AppNav />
+      <MainStyled>
+        <Suspense fallback={<Fallback />}>
           <Outlet />
         </Suspense>
-      </main>
+      </MainStyled>
     </>
   );
 };

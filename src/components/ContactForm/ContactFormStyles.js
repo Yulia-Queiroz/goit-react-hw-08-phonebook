@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
+  margin-top: 20px;
+  margin-left: 20px;
   box-sizing: border-box;
   width: 400px;
 `;

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const MainStyled = styled.main`
+  height: 100vh;
+`;
+
 export const ContainerStyled = styled.div`
   margin-left: 20px;
 `;

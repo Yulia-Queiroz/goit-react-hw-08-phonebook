@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const ContactListStyled = styled.ul`
   padding: 0;
+  margin-top: 20px;
+  margin-left: 20px;
 `;
 
 export const ContactListItem = styled.li`
